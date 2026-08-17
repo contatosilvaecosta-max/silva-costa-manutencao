@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071712">
+  <meta name="description" content="A loja online da Silva & Costa está em manutenção. Fale com nossa equipe pelo WhatsApp para fazer seu pedido.">
+  <title>Silva & Costa — Atendimento pelo WhatsApp</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06110e;
+      --surface: rgba(14, 37, 30, 0.82);
+      --surface-border: rgba(224, 187, 73, 0.22);
+      --gold: #dfb83b;
+      --gold-light: #f4d979;
+      --cream: #fffaf0;
+      --muted: #c2cec8;
+      --whatsapp: #25d366;
+      --whatsapp-dark: #128c4a;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(223, 184, 59, 0.13), transparent 28rem),
+        radial-gradient(circle at 88% 82%, rgba(37, 211, 102, 0.08), transparent 25rem),
+        linear-gradient(145deg, #071712 0%, #06110e 52%, #091c17 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      z-index: 0;
+      width: 22rem;
+      height: 22rem;
+      border: 1px solid rgba(223, 184, 59, 0.08);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    body::before {
+      top: -12rem;
+      right: -7rem;
+    }
+
+    body::after {
+      bottom: -14rem;
+      left: -9rem;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 100vh;
+      min-height: 100svh;
+      place-items: center;
+      padding: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .card {
+      width: min(100%, 48rem);
+      padding: clamp(1.7rem, 5vw, 4.5rem);
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 2rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .logo {
+      display: block;
+      width: clamp(11rem, 35vw, 17rem);
+      height: auto;
+      margin: 0 auto 1.5rem;
+      filter: drop-shadow(0 10px 26px rgba(223, 184, 59, 0.12));
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1.25rem;
+      padding: 0.48rem 0.85rem;
+      color: var(--gold-light);
+      background: rgba(223, 184, 59, 0.08);
+      border: 1px solid rgba(223, 184, 59, 0.2);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .status::before {
+      width: 0.48rem;
+      height: 0.48rem;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0.28rem rgba(223, 184, 59, 0.12);
+      content: "";
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0 auto;
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.15rem, 7vw, 4.6rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .lead {
+      max-width: 36rem;
+      margin: 1.4rem auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.68;
+      text-wrap: balance;
+    }
+
+    .lead strong {
+      color: var(--cream);
+      font-weight: 650;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 3.75rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 2rem;
+      padding: 0.95rem 1.45rem;
+      color: #032d14;
+      background: linear-gradient(135deg, #42e77d, var(--whatsapp));
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 1rem;
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.2);
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #58ed8d, #2bdd6d);
+      box-shadow: 0 16px 38px rgba(37, 211, 102, 0.28);
+      transform: translateY(-2px);
+    }
+
+    .button:focus-visible {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    .button svg {
+      width: 1.35rem;
+      height: 1.35rem;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    .phone {
+      margin: 0.9rem 0 0;
+      color: #99aaa2;
+      font-size: 0.88rem;
+    }
+
+    .note {
+      display: flex;
+      max-width: 32rem;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin: 2rem auto 0;
+      padding-top: 1.4rem;
+      color: #aab9b2;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      text-align: left;
+    }
+
+    .note svg {
+      width: 1.1rem;
+      min-width: 1.1rem;
+      margin-top: 0.16rem;
+      fill: var(--gold);
+    }
+
+    @media (max-width: 560px) {
+      main {
+        align-items: stretch;
+        padding: 0;
+      }
+
+      .card {
+        display: flex;
+        min-height: 100vh;
+        min-height: 100svh;
+        flex-direction: column;
+        justify-content: center;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" aria-labelledby="titulo">
+      <img class="logo" src="logo.png" alt="Silva & Costa">
+      <p class="status">Manutenção temporária</p>
+      <h1 id="titulo">Nossa loja está se renovando.</h1>
+      <p class="lead">
+        Estamos fazendo uma manutenção rápida no site. Enquanto isso,
+        <strong>nosso atendimento e nossos pedidos continuam normalmente pelo WhatsApp.</strong>
+      </p>
+      <a
+        class="button"
+        href="https://wa.me/5519981538196?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Silva%20%26%20Costa%20e%20gostaria%20de%20fazer%20um%20pedido."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com a Silva & Costa no WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M19.11 17.21c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.08-1.29-.77-.69-1.29-1.53-1.44-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.93-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.92.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3zM16.03 3.2a12.6 12.6 0 0 0-10.92 18.9L3.2 28.8l6.86-1.8a12.6 12.6 0 1 0 5.97-23.8zm0 22.9c-1.86 0-3.68-.5-5.27-1.45l-.38-.23-4.07 1.07 1.09-3.97-.25-.41a10.31 10.31 0 1 1 8.88 4.99z"/>
+        </svg>
+        Fazer pedido pelo WhatsApp
+      </a>
+      <p class="phone">(19) 98153-8196</p>
+      <div class="note">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 .01 20.01A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+        <span>Se você já fez um pedido, pode falar com a gente pelo mesmo botão. Nossa equipe continua acompanhando tudo normalmente.</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
